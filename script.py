@@ -22,3 +22,6 @@ for path in glob.iglob(f'{directory}/*.dcm'):
         print("This file", path, "has no Attribute PatientName")
 
     dataset.save_as(abspath + "/" + name + ".dcm")
+
+    with open("all_path.txt", "a+") as file:
+        file.write(path + " => " + first_lay + "/" + second_lay + "/" + name + ".dcm \n")
